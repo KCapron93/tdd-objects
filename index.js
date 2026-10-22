@@ -11,7 +11,7 @@
  * getCohort({cohort: 3476, name: "Charlie"}); // 3476
  */
 export function getCohort(student) {
-  // TODO
+  return student.cohort;
 }
 
 /**
@@ -30,7 +30,10 @@ export function getCohort(student) {
  * sortStudents({cohort: 1, name: "Alice"}, {cohort: 2, name: "Alice"}); // {cohort: 1, name: "Alice"}
  */
 export function sortStudents(studentA, studentB) {
-  // TODO
+  if (studentB.name < studentA.name) {
+    return studentB;
+  }
+  return studentA;
 }
 
 /**
@@ -46,9 +49,7 @@ export function sortStudents(studentA, studentB) {
  * @example
  * makeFlag("yellow", "triangle"); // { color: "yellow", icon: "triangle" }
  */
-export function makeFlag(color, icon) {
-  // TODO
-}
+export function makeFlag(color, icon) {}
 
 /**
  * @typedef {{value: number}} Count
