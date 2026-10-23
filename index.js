@@ -49,7 +49,10 @@ export function sortStudents(studentA, studentB) {
  * @example
  * makeFlag("yellow", "triangle"); // { color: "yellow", icon: "triangle" }
  */
-export function makeFlag(color, icon) {}
+export function makeFlag(color, icon) {
+  const flagStyle = { color: color, icon: icon };
+  return flagStyle;
+}
 
 /**
  * @typedef {{value: number}} Count
@@ -64,7 +67,8 @@ export function makeFlag(color, icon) {}
  * increment({value: -5}); // {value: -4}
  */
 export function increment(count) {
-  // TODO
+  const newCount = count.value + 1;
+  return { value: newCount };
 }
 
 /**
@@ -107,7 +111,13 @@ export function getTaxicabDistance(from, to) {
  * getHerbivores([{name: "Rabbit", isHerbivore: true}]); // [{name: "Rabbit", isHerbivore: true}]
  */
 export function getHerbivores(animals) {
-  // TODO
+  const herbivorous = [];
+  for (const animal of animals) {
+    if (animal.isHerbivore) {
+      herbivorous.push(animal);
+    }
+  }
+  return herbivorous;
 }
 
 /**
@@ -123,7 +133,13 @@ export function getHerbivores(animals) {
  * getCarnivoreNames([{name: "Wolf", isCarnivore: true}]); // ["Wolf"]
  */
 export function getCarnivoreNames(animals) {
-  // TODO
+  const carnivorous = [];
+  for (const animal of animals) {
+    if (animal.isCarnivore) {
+      carnivorous.push(animal);
+    }
+  }
+  return carnivorous;
 }
 
 /**
