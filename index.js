@@ -160,7 +160,23 @@ export function getCarnivoreNames(animals) {
  * getTotalCost([{name: "Notebook", quantity: 0, price: 5}]); // 0
  */
 export function getTotalCost(cart) {
-  // TODO
+  // Function receives an array of "Item" objects.
+  // Calculate to price for everything in the array.
+
+  // Look at each item
+  // Counting loop: for (let i=0; i<cart.length(); i++) {}
+
+  let total = 0;
+
+  for (let item of cart) {
+    // multiply the price by the quantity for the item
+    const itemTotal = item.price * item.quantity;
+    // add that to a running total
+    total += itemTotal;
+  }
+
+  // return the total
+  return total;
 }
 
 /**
@@ -180,7 +196,11 @@ export function getTotalCost(cart) {
  * zip(["x"], ["x"]); // {x: "x"}
  */
 export function zip(keys, values) {
-  // TODO
+  const result = {};
+  for (let i = 0; i < keys.length; i++) {
+    result[keys[i]] = values[i];
+  }
+  return result;
 }
 
 /**
@@ -196,5 +216,14 @@ export function zip(keys, values) {
  * countCharacters("aAa"); // {a: 2, A: 1}
  */
 export function countCharacters(word) {
-  // TODO
+  const counts = {};
+  for (let i = 0; i < word.length; i++) {
+    const char = word[i];
+    if (counts[char]) {
+      counts[char] = counts[char] + 1;
+    } else {
+      counts[char] = 1;
+    }
+  }
+  return counts;
 }
